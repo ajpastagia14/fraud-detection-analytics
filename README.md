@@ -1,88 +1,127 @@
-# Fraud Detection Analytics Project
+# Fraud Detection Analytics
 
 ## Project Overview
 
-This project focuses on detecting fraudulent financial transactions using:
+This project analyzes financial transaction data to identify patterns associated with fraudulent activity and build machine learning models capable of detecting potentially fraudulent transactions.
 
-- Python
-- Pandas
-- Seaborn
-- Machine Learning
-- Exploratory Data Analysis (EDA)
-
-The goal was to analyze transaction behavior, identify fraud patterns, handle missing values, engineer behavioral features, and build predictive fraud detection models.
+The project covers the complete analytics workflow, including data cleaning, exploratory data analysis (EDA), feature engineering, visualization, model development, and performance evaluation.
 
 ---
 
-## Dataset Information
+## Business Problem
 
-The dataset contains transaction-level financial data including:
+Financial institutions process thousands of transactions every day, making it difficult to manually identify suspicious activity.
 
-- transaction amount
-- customer age
-- number of items
-- transaction timing
-- distance from home
-- network quality
-- device type
-- velocity score
-- fraud status
+The objective of this project was to:
+
+* Detect potentially fraudulent transactions
+* Understand behavioral differences between legitimate and fraudulent transactions
+* Identify the most influential fraud indicators
+* Build machine learning models to support fraud detection efforts
+
+---
+
+## Tools & Technologies
+
+* Python
+* Pandas
+* NumPy
+* Matplotlib
+* Seaborn
+* Scikit-Learn
+* Jupyter Notebook
+
+---
+
+## Dataset Overview
+
+The dataset contains transaction-level information, including:
+
+* Transaction Amount
+* Customer Age
+* Distance From Home
+* Number of Items Purchased
+* Device Type
+* Network Quality
+* Previous Transactions
+* Transaction Time
+* Velocity Score
+* Fraud Status
 
 Target Variable:
-- `0` = Legitimate Transaction
-- `1` = Fraudulent Transaction
+
+* 0 = Legitimate Transaction
+* 1 = Fraudulent Transaction
 
 ---
 
-## Data Cleaning
+## Data Cleaning & Preparation
 
-Performed:
-- missing value analysis
-- median imputation for numerical columns
-- mode imputation for categorical columns
-- missing value flag creation
-- dataset validation
+The following preprocessing steps were performed:
 
----
-
-## Exploratory Data Analysis (EDA)
-
-Analyzed:
-- fraud distribution
-- transaction amount patterns
-- distance from home behavior
-- transaction timing behavior
-- velocity score patterns
-- correlation heatmap
-- engineered fraud indicators
-
-Created behavioral features:
-- `high_amount_flag`
-- `far_from_home_flag`
-- `high_risk_behavior`
+* Missing value analysis
+* Median imputation for numerical variables
+* Data validation checks
+* Feature preparation for modeling
+* Train-test split using stratified sampling
 
 ---
 
-## Machine Learning
+## Exploratory Data Analysis
 
-Models used:
-- Logistic Regression
-- Balanced Logistic Regression
+Key analyses included:
 
-Techniques applied:
-- train-test split
-- class imbalance handling
-- confusion matrix evaluation
-- precision / recall analysis
+* Fraud distribution analysis
+* Transaction amount comparison
+* Customer behavior analysis
+* Distance from home investigation
+* Velocity score evaluation
+* Correlation analysis
+* Feature importance analysis
+
+Several visualizations were created to understand fraud patterns and transaction behavior.
+
+---
+
+## Machine Learning Models
+
+### Logistic Regression
+
+Used as a baseline classification model to establish initial performance metrics.
+
+### Random Forest Classifier
+
+A Random Forest model was trained to improve fraud detection performance and identify the most influential predictive variables.
+
+Model evaluation included:
+
+* Accuracy
+* Precision
+* Recall
+* F1 Score
+* Confusion Matrix
+* Feature Importance Analysis
 
 ---
 
 ## Key Findings
 
-- Fraud cases represented approximately 11% of transactions.
-- Fraudulent transactions showed slightly higher behavioral risk patterns.
-- Class imbalance significantly impacted model performance.
-- Balanced Logistic Regression improved fraud detection recall.
+* Fraudulent transactions represented approximately 11% of all transactions.
+* Distance from home was one of the strongest indicators of fraudulent activity.
+* Transaction amount and velocity score showed significant influence on fraud prediction.
+* Class imbalance affected model performance and required careful evaluation.
+* Random Forest outperformed the baseline model and provided better feature interpretability.
+
+---
+
+## Business Recommendations
+
+Based on the analysis:
+
+* Flag transactions occurring unusually far from a customer's typical location.
+* Monitor high-value transactions more closely.
+* Incorporate velocity-based monitoring for rapid transaction activity.
+* Combine multiple behavioral indicators to improve fraud detection accuracy.
 
 ---
 
@@ -91,23 +130,13 @@ Techniques applied:
 ```text
 fraud-detection-analytics/
 │
+├── README.md
 ├── fraud.csv
 ├── fraud_cleaned.csv
-├── fraud_analysis.ipynb
-└── README.md
+├── fraud_detection_analysis.ipynb
+├── fraud_visualization_analysis.ipynb
+└── screenshots/
 ```
-
----
-
-## Future Improvements
-
-Planned next steps:
-- SQL analytics phase
-- Tableau dashboard development
-- Random Forest implementation
-- Feature scaling
-- SMOTE balancing
-- Model optimization
 
 ---
 
@@ -115,5 +144,6 @@ Planned next steps:
 
 Akshar Pastagia
 
-GitHub:
-https://github.com/ajpastagia14
+GitHub: https://github.com/ajpastagia14
+
+LinkedIn: https://www.linkedin.com/in/akshar-pastagia-228203269/
